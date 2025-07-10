@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philosophers.c                                     :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flren <flren@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/11 16:20:27 by flren             #+#    #+#             */
-/*   Updated: 2025/06/25 19:37:40 by flren            ###   ########.fr       */
+/*   Created: 2025/06/24 18:29:29 by flren             #+#    #+#             */
+/*   Updated: 2025/06/25 19:37:27 by flren            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	ft_init_data(t_data *data, char **av)
+long	ft_atol(const char *str)
 {
-	data->nb_philos =
-	data->time_to_die = 
+	long	result;
+	int		sign;
+	int		i;
+
+	result = 0;
+	sign = 1;
+	i = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = result * 10 + (str[i] - '0');
+		i++;
+	}
+
+	return (result * sign);
 }
 
-int	main(int ac, char **av)
-{
-	t_data	*data;
-
-	if (ac != 5 && ac != 6)
-		ft_error(MSG_AC, ERR_AC);
-	return (SUCCESS);
-}
