@@ -86,7 +86,6 @@ $(OBJ_DIR)/%.o: %.c
 clean:
 	@$(RM) -r $(OBJ_DIR)
 	@echo
-	@echo "$(BLUE)🧹 Dossier '$(OBJ_DIR)' nettoyé.$(RESET)"
 
 fclean: clean
 	@$(RM) $(NAME)

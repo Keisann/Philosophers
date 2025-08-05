@@ -6,23 +6,20 @@
 /*   By: flren <flren@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 16:20:27 by flren             #+#    #+#             */
-/*   Updated: 2025/06/25 19:37:40 by flren            ###   ########.fr       */
+/*   Updated: 2025/08/05 17:55:01 by flren            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-
-int	ft_init_data(t_data *data, char **av)
-{
-	data->nb_philos =
-	data->time_to_die = 
-}
 
 int	main(int ac, char **av)
 {
 	t_data	*data;
 
 	if (ac != 5 && ac != 6)
-		ft_error(MSG_AC, ERR_AC);
+		ft_error(MSG_AC, ERROR);
+	if (ft_check_args(ac, av) == FAIL)
+		ft_error(MSG_AV, ERROR);
+	(void)data;
 	return (SUCCESS);
 }
