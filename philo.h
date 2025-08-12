@@ -18,7 +18,8 @@
 # define MSG_AC "Error !\n4 arguments required\n"
 # define MSG_AV "Error !\nInvalid Arguments !\n"
 # define MSG_0_PHILO "Error !\nYou need at least one Philosopher !\n"
-# define MSG_INIT_PRINT "Error !\nFail init print mutex !\n"
+# define MSG_INIT_DATA "Error !\nFail init data !\n"
+# define MSG_INIT_PHILO "Error !\nFail init philo !\n"
 
 typedef struct s_data
 {

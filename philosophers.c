@@ -30,8 +30,12 @@ int ft_init_data(t_data *data, int ac, char **av)
 	return (SUCCESS);
 }
 
-t_philo	ft_init_philo(int i)
+int	ft_init_philo(t_philo **philo, t_data *data)
 {
+
+	*philo = malloc(sizeof(t_philo) * data->nb_philos);
+	if (!(*philo))
+		return (FAIL);
 	
 	
 }
@@ -39,16 +43,14 @@ int	main(int ac, char **av)
 {
 	t_data	data;
 	t_philo *philo;
-	int	i;
 
-	i = 0;
 	if (ac != 5 && ac != 6)
 		ft_error(MSG_AC, ERROR);
 	if (ft_check_args(ac, av) == FAIL)
 		ft_error(MSG_AV, ERROR);
 	if (ft_init_data(&data, ac, av) == FAIL)
-		ft_error(MSG_INIT_PRINT, ERROR);
-	while (i <= data.nb_philos)
-		ft_init_philo(&philo);
+		ft_error(MSG_INIT_DATA, ERROR);
+	if (ft_init_philo(&philo, &data) == FAIL)
+		ft_error(MSG_INIT_PHILO, ERROR);
 	return (SUCCESS);
 }
