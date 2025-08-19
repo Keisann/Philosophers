@@ -32,10 +32,23 @@ int ft_init_data(t_data *data, int ac, char **av)
 
 int	ft_init_philo(t_philo **philo, t_data *data)
 {
+	int i;
 
 	*philo = malloc(sizeof(t_philo) * data->nb_philos);
 	if (!(*philo))
 		return (FAIL);
+	i = 0;
+	while (i < data->nb_philos)
+	{
+		(*philo)[i].id_philo = i + 1;
+		(*philo)[i].nb_eat = 0;
+		(*philo)[i].time_last_meal = 0;
+		(*philo)[i].data = data;
+
+		if (pthread_mutex_init(&(*philo)[i].left_fork, NULL) != 0)
+			return (FAIL);
+		
+	}
 	
 	
 }
